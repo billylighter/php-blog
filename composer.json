@@ -1,0 +1,17 @@
+{
+    "name": "admin/app",
+    "autoload": {
+        "psr-4": {
+            "Admin\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sell"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6"
+    }
+}
