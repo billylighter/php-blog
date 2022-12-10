@@ -1,0 +1,24 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <div class="container">
+        <img src="https://placehold.jp/720x320.png" class="img-fluid mb-4" alt="...">
+        <h1>
+            {{ post.title|escape }}
+        </h1>
+        <div class="text-muted mb-3">
+            <div class="d-inline-block">
+                Volodymyr Sell
+            </div>
+            <div class="d-inline-block"> |</div>
+            <div class="d-inline-block">
+                {{ post.published_date|date("F d, Y") }}
+            </div>
+        </div>
+        <div>
+            <p>
+                {{ post.content|raw  }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
