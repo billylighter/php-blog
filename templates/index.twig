@@ -5,36 +5,22 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="https://placehold.jp/720x320.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="/blog-post-1" class="btn btn-primary">Go somewhere</a>
+            {% for post in posts %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="https://placehold.jp/720x320.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ post.title|escape  }}
+                            </h5>
+                            <p class="card-text">
+                                {{ post.description|escape }}
+                            </p>
+                            <a href="{{ post.url_key }}" class="btn btn-primary">Read more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="https://placehold.jp/720x320.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="/blog-post-2" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="https://placehold.jp/720x320.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="/blog-post-3" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </div>
