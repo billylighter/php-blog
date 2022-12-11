@@ -5,22 +5,36 @@
     <div class="container">
         <div class="row">
 
-            {% for post in posts %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="https://placehold.jp/720x320.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                {{ post.title|escape  }}
-                            </h5>
-                            <p class="card-text">
-                                {{ post.description|escape }}
-                            </p>
-                            <a href="{{ post.url_key }}" class="btn btn-primary">Read more</a>
+            <div class="col-lg-9 col-md-8">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="card mb-4 d-flex">
+                            {% if post.image_path is not null %}
+                                <img src="{{ post.image_path }}" class="card-img-top d-none" alt="...">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{ post.title|escape }}
+                                </h5>
+                                <p class="card-text">
+                                    {{ post.description|escape }}
+                                </p>
+                                <a href="{{ post.url_key }}" class="btn btn-primary">Read more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+                <a href="/blog" class="btn btn-dark">More blog posts</a>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <h5>
+                    Volodymyr Sell
+                </h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet animi consectetur et, ex fugiat fugit illum impedit itaque nostrum quaerat quia quisquam quos sint tempore ullam vero voluptatum.
+                </p>
+            </div>
 
         </div>
     </div>
