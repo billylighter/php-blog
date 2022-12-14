@@ -12,30 +12,54 @@
 
     <title>Hello, world!</title>
 </head>
-<body>
+<body class="d-flex flex-column justify-content-between" style="height: 100vh;">
 
-<div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark navbar navbar-dark">
-        <div class="container">
-            {% include 'sections/navigation.twig' %}
+<header>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark navbar navbar-dark">
+            <div class="container">
+                {% include 'sections/navigation.twig' %}
+            </div>
         </div>
     </div>
-</div>
-<nav class="navbar navbar-dark bg-dark py-3 mb-5">
-    <div class="container">
+    <nav class="navbar navbar-dark bg-dark py-3 mb-5">
+        <div class="container">
 
-        <a class="h2 mb-0 link link-danger" href="/">
-            <i class="bi bi-suit-heart-fill"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+            <a class="h2 mb-0 link link-danger" href="/">
+                <i class="bi bi-suit-heart-fill"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
 
 {% block body  %}
 
 {% endblock %}
+
+<footer class="bg-dark mt-5">
+    <nav class="navbar navbar-expand-sm navbar-dark ">
+        <div class="container">
+            <a class="h2 mb-0 link link-danger" href="/">
+                <i class="bi bi-suit-heart-fill"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                {% include 'sections/navigation.twig' %}
+            </div>
+        </div>
+    </nav>
+    <div class="container pb-3">
+        <div class="text-muted text-center">
+            © {{ "now"|date("Y")}} Volodymyr Sell
+        </div>
+    </div>
+</footer>
+
 
 <!-- Optional JavaScript; choose one of the two! -->
 

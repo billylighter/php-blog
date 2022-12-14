@@ -1,8 +1,10 @@
 <ul class="navbar-nav me-auto my-2 my-lg-0">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link active" aria-current="page" href="{{ base_url() }}">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="{{ url("blog") }}">Blog</a>
+    </li><li class="nav-item">
+        <a class="nav-link" href="{{ url('about') }}">About</a>
     </li>
 </ul>

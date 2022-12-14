@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 {% if post.image_path is not null %}
-                    <img src="{{ post.image_path }}" class="card-img-top mb-4" alt="...">
+                    <img src="{{ asset_url(post.image_path) }}" class="card-img-top mb-4" alt="...">
                 {% endif %}
                 <h1>
                     {{ post.title|escape }}

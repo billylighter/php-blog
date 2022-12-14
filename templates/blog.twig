@@ -7,7 +7,8 @@
 
             <div class="col-lg-9 col-md-8">
                 {% include 'sections/posts.twig' with posts %}
-                <a href="/blog" class="btn btn-dark">More blog posts</a>
+                <hr>
+                {% include 'sections/pagination.twig' with posts %}
             </div>
 
             <div class="col-lg-3 col-md-4">

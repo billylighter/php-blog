@@ -1,0 +1,18 @@
+{% for post in posts %}
+    <div class="post">
+        <div class="card mb-4 d-flex">
+            {% if post.image_path is not null %}
+                <img src="{{ asset_url(post.image_path) }}" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ post.title|escape }}
+                </h5>
+                <p class="card-text">
+                    {{ post.description|escape }}
+                </p>
+                <a href="{{ post.url_key }}" class="btn btn-primary">Read more</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

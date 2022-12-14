@@ -31,12 +31,24 @@ class PostMapper{
         return array_shift($result);
     }
 
-    public function getList($direction) : ?array
+    /**
+     * @param int $page
+     * @param int $limit
+     * @param $direction
+     * @return array|null
+     */
+    public function getList(int $page = 1, int $limit = 2, string $direction = 'ASC') : ?array
     {
         if(!in_array($direction, ['DESC', 'ASC'])){
             throw new Exception('The direction is not supported');
         }
-        $statement = $this->connection->prepare("SELECT * FROM post ORDER BY published_date DESC");
+
+        $start = ($page - 1) * $limit;
+
+        $statement = $this->connection->prepare(
+            'SELECT * FROM post ORDER BY published_date ' . $direction .
+            ' LIMIT ' . $start . ',' . $limit
+        );
         $statement->execute();
         return $statement->fetchAll();
     }
