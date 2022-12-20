@@ -52,4 +52,18 @@ class PostMapper{
         $statement->execute();
         return $statement->fetchAll();
     }
+
+    /**
+     * @return int
+     */
+    public function getTotalCount(): int
+    {
+        $statement = $this->connection->prepare(
+            'SELECT count(post_id) as total FROM post'
+        );
+
+        $statement->execute();
+
+        return (int) ($statement->fetchColumn() ?? 0);
+    }
 }
